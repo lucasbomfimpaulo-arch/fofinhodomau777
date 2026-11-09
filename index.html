@@ -2,524 +2,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Neymar Jr. | História de um Craque</title>
-
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-:root {
-  --green: #087b45;
-  --dark: #071b16;
-  --gold: #f4ca55;
-  --white: #ffffff;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #f5f7f5;
-  color: #202820;
-  line-height: 1.7;
-}
-
-header {
-  background: rgba(5, 26, 19, .97);
-  padding: 18px 8%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.logo {
-  color: var(--gold);
-  font-size: 24px;
-  font-weight: bold;
-}
-
-nav {
-  display: flex;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  transition: .3s;
-}
-
-nav a:hover {
-  color: var(--gold);
-}
-
-.hero {
-  min-height: 570px;
-  background:
-    linear-gradient(90deg, rgba(3,22,15,.95), rgba(3,22,15,.45)),
-    url("https://commons.wikimedia.org/wiki/Special:FilePath/Neymar_2018.jpg")
-    center 30% / cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding: 70px 10%;
-  color: white;
-}
-
-.hero-content {
-  max-width: 650px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 7vw, 76px);
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-
-.hero h1 span {
-  color: var(--gold);
-}
-
-.hero p {
-  font-size: 19px;
-  margin-bottom: 28px;
-}
-
-.btn {
-  display: inline-block;
-  background: var(--gold);
-  color: #172018;
-  padding: 13px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: .3s;
-}
-
-.btn:hover {
-  transform: translateY(-4px);
-  background: white;
-}
-
-section {
-  padding: 75px 9%;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-size: 34px;
-  color: var(--green);
-}
-
-.section-title p {
-  color: #68746c;
-}
-
-.about {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px #0002;
-}
-
-.about-text h2 {
-  color: var(--green);
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 22px;
-}
-
-.card {
-  background: white;
-  padding: 28px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px #0000000d;
-  transition: .3s;
-  border-bottom: 4px solid var(--green);
-}
-
-.card:hover {
-  transform: translateY(-7px);
-}
-
-.card .icon {
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.card h3 {
-  color: var(--green);
-  margin-bottom: 10px;
-}
-
-.timeline {
-  max-width: 850px;
-  margin: auto;
-  border-left: 4px solid var(--green);
-  padding-left: 28px;
-}
-
-.event {
-  position: relative;
-  background: white;
-  padding: 22px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 15px #0000000d;
-}
-
-.event::before {
-  content: "";
-  position: absolute;
-  left: -39px;
-  top: 25px;
-  width: 17px;
-  height: 17px;
-  border-radius: 50%;
-  background: var(--gold);
-  border: 3px solid var(--green);
-}
-
-.event h3 {
-  color: var(--green);
-}
-
-.stats {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-}
-
-.stats .section-title h2 {
-  color: var(--gold);
-}
-
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 25px;
-}
-
-.stat h3 {
-  font-size: 38px;
-  color: var(--gold);
-}
-
-.stat p {
-  color: #ddd;
-}
-
-.curiosities {
-  background: #eaf2eb;
-}
-
-.conclusion {
-  background: var(--green);
-  color: white;
-  text-align: center;
-}
-
-.conclusion h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: var(--gold);
-}
-
-.conclusion p {
-  max-width: 800px;
-  margin: auto;
-}
-
-footer {
-  background: #071b16;
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-}
-
-footer span {
-  color: var(--gold);
-}
-
-@media(max-width: 750px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav {
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .hero {
-    min-height: 500px;
-    padding: 50px 7%;
-    background-position: center;
-  }
-
-  .about {
-    grid-template-columns: 1fr;
-  }
-
-  section {
-    padding: 55px 7%;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neymar Jr. | História e Carreira</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="logo">NEYMAR JR.</div>
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#biografia">Biografia</a>
-    <a href="#carreira">Carreira</a>
-    <a href="#titulos">Conquistas</a>
-    <a href="#curiosidades">Curiosidades</a>
-  </nav>
-</header>
+    <header>
+        <h2>NEYMAR JR.</h2>
 
-<main>
+        <nav>
+            <a href="#historia">História</a>
+            <a href="#carreira">Carreira</a>
+            <a href="#conquistas">Conquistas</a>
+        </nav>
+    </header>
 
-<section class="hero" id="inicio">
-  <div class="hero-content">
-    <h1>NEYMAR <span>JR.</span></h1>
-    <p>Conheça a história de um dos maiores talentos do futebol brasileiro, sua trajetória, suas conquistas e sua importância para o esporte.</p>
-    <a href="#biografia" class="btn">Conhecer sua história</a>
-  </div>
-</section>
+    <section class="inicio">
+        <h1>NEYMAR JR.</h1>
+        <p>Uma história de talento, dedicação e futebol.</p>
+        <a href="#historia" class="botao">Conheça sua história</a>
+    </section>
 
-<section id="biografia">
-  <div class="about">
-    <img
-      src="https://commons.wikimedia.org/wiki/Special:FilePath/Neymar_2018.jpg"
-      alt="Neymar durante uma partida de futebol"
-      loading="lazy"
-    >
-    <div class="about-text">
-      <h2>Quem é Neymar?</h2>
-      <p>
-        Neymar da Silva Santos Júnior nasceu em 5 de fevereiro de 1992,
-        em Mogi das Cruzes, no estado de São Paulo.
-      </p>
-      <p>
-        Desde criança, demonstrou grande habilidade com a bola.
-        Com o apoio de sua família, começou a desenvolver seu talento
-        e conquistou espaço no futebol profissional ainda muito jovem.
-      </p>
-      <p>
-        Conhecido por seus dribles, criatividade, velocidade e habilidade,
-        Neymar tornou-se um dos jogadores brasileiros mais conhecidos
-        no mundo.
-      </p>
-    </div>
-  </div>
-</section>
+    <section id="historia">
+        <h2>Quem é Neymar?</h2>
 
-<section id="carreira">
-  <div class="section-title">
-    <h2>Trajetória no futebol</h2>
-    <p>Os principais momentos da carreira do jogador.</p>
-  </div>
+        <p>
+            Neymar da Silva Santos Júnior nasceu em 5 de fevereiro
+            de 1992, em Mogi das Cruzes, São Paulo. Desde criança,
+            demonstrava talento e paixão pelo futebol.
 
-  <div class="timeline">
-    <div class="event">
-      <h3>2009 – Santos FC</h3>
-      <p>
-        Neymar estreou profissionalmente pelo Santos em 2009.
-        No clube, ganhou destaque nacional e conquistou títulos
-        importantes, incluindo a Copa Libertadores de 2011.
-      </p>
-    </div>
+            Com dedicação e esforço, conseguiu realizar seu sonho
+            de se tornar jogador profissional e conquistou
+            reconhecimento mundial.
+        </p>
+    </section>
 
-    <div class="event">
-      <h3>2013 – FC Barcelona</h3>
-      <p>
-        Em 2013, transferiu-se para o Barcelona, da Espanha.
-        Ao lado de Lionel Messi e Luis Suárez, formou um dos
-        ataques mais conhecidos do futebol mundial.
-      </p>
-    </div>
+    <section id="carreira">
+        <h2>Sua carreira</h2>
 
-    <div class="event">
-      <h3>2017 – Paris Saint-Germain</h3>
-      <p>
-        Em 2017, foi contratado pelo Paris Saint-Germain.
-        Na França, conquistou campeonatos nacionais e participou
-        da campanha que levou o clube à final da Champions League
-        em 2020.
-      </p>
-    </div>
+        <div class="cards">
 
-    <div class="event">
-      <h3>2023 – Al-Hilal</h3>
-      <p>
-        Em 2023, Neymar passou a defender o Al-Hilal,
-        da Arábia Saudita. Sua passagem foi marcada por
-        uma grave lesão no joelho.
-      </p>
-    </div>
+            <div class="card">
+                <h3>Santos FC</h3>
+                <p>
+                    Começou a ganhar destaque no Santos.
+                    Em 2011, conquistou a Libertadores.
+                </p>
+            </div>
 
-    <div class="event">
-      <h3>2025 – Retorno ao Santos</h3>
-      <p>
-        Em 2025, Neymar retornou ao Santos, clube onde começou
-        a se destacar profissionalmente, reencontrando sua torcida.
-      </p>
-    </div>
-  </div>
-</section>
+            <div class="card">
+                <h3>Barcelona</h3>
+                <p>
+                    Em 2013, foi contratado pelo Barcelona,
+                    formando um grande trio com Messi e Suárez.
+                </p>
+            </div>
 
-<section class="stats">
-  <div class="section-title">
-    <h2>Momentos marcantes</h2>
-    <p>Alguns destaques da história de Neymar.</p>
-  </div>
+            <div class="card">
+                <h3>PSG</h3>
+                <p>
+                    Em 2017, chegou ao Paris Saint-Germain,
+                    tornando-se um dos grandes nomes do futebol.
+                </p>
+            </div>
 
-  <div class="stat-grid">
-    <div class="stat">
-      <h3>1992</h3>
-      <p>Ano de nascimento</p>
-    </div>
-    <div class="stat">
-      <h3>2009</h3>
-      <p>Estreia profissional</p>
-    </div>
-    <div class="stat">
-      <h3>2011</h3>
-      <p>Libertadores pelo Santos</p>
-    </div>
-    <div class="stat">
-      <h3>2016</h3>
-      <p>Ouro olímpico no futebol</p>
-    </div>
-  </div>
-</section>
+            <div class="card">
+                <h3>Seleção Brasileira</h3>
+                <p>
+                    Representou o Brasil em diversas competições
+                    e conquistou o ouro olímpico em 2016.
+                </p>
+            </div>
 
-<section id="titulos">
-  <div class="section-title">
-    <h2>Principais conquistas</h2>
-    <p>Alguns dos títulos mais importantes da carreira.</p>
-  </div>
+        </div>
+    </section>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">🏆</div>
-      <h3>Copa Libertadores</h3>
-      <p>Conquistada com o Santos em 2011.</p>
-    </div>
+    <section id="conquistas" class="conquistas">
+        <h2>Principais conquistas</h2>
 
-    <div class="card">
-      <div class="icon">🥇</div>
-      <h3>Ouro Olímpico</h3>
-      <p>Medalha de ouro com o Brasil nos Jogos Olímpicos Rio 2016.</p>
-    </div>
+        <div class="cards">
 
-    <div class="card">
-      <div class="icon">🌍</div>
-      <h3>Champions League</h3>
-      <p>Campeão europeu pelo Barcelona na temporada 2014–15.</p>
-    </div>
+            <div class="card">
+                <h3>🏆 Libertadores</h3>
+                <p>Campeão pelo Santos em 2011.</p>
+            </div>
 
-    <div class="card">
-      <div class="icon">🇪🇸</div>
-      <h3>Campeonato Espanhol</h3>
-      <p>Conquistado pelo Barcelona na temporada 2014–15.</p>
-    </div>
+            <div class="card">
+                <h3>🥇 Ouro Olímpico</h3>
+                <p>Campeão com o Brasil em 2016.</p>
+            </div>
 
-    <div class="card">
-      <div class="icon">🇫🇷</div>
-      <h3>Campeonato Francês</h3>
-      <p>Conquistado durante sua passagem pelo PSG.</p>
-    </div>
+            <div class="card">
+                <h3>🏆 Champions League</h3>
+                <p>Campeão pelo Barcelona em 2015.</p>
+            </div>
 
-    <div class="card">
-      <div class="icon">🇧🇷</div>
-      <h3>Copa das Confederações</h3>
-      <p>Campeão com a Seleção Brasileira em 2013.</p>
-    </div>
-  </div>
-</section>
+            <div class="card">
+                <h3>🏆 Copa das Confederações</h3>
+                <p>Campeão com o Brasil em 2013.</p>
+            </div>
 
-<section id="curiosidades" class="curiosities">
-  <div class="section-title">
-    <h2>Curiosidades sobre Neymar</h2>
-    <p>Conheça alguns fatos interessantes.</p>
-  </div>
+        </div>
+    </section>
 
-  <div class="cards">
-    <div class="card">
-      <div class="icon">⚽</div>
-      <h3>Início cedo</h3>
-      <p>Começou a chamar atenção no futebol ainda durante a adolescência.</p>
-    </div>
+    <section class="conclusao">
+        <h2>Conclusão</h2>
 
-    <div class="card">
-      <div class="icon">🇧🇷</div>
-      <h3>Seleção Brasileira</h3>
-      <p>É o maior artilheiro da Seleção Brasileira masculina principal, segundo o reconhecimento da FIFA.</p>
-    </div>
+        <p>
+            Neymar é um dos jogadores brasileiros mais conhecidos
+            do mundo. Sua trajetória mostra como o talento,
+            a dedicação e a persistência podem ajudar uma pessoa
+            a alcançar seus sonhos.
+        </p>
+    </section>
 
-    <div class="card">
-      <div class="icon">🎮</div>
-      <h3>Videogames</h3>
-      <p>É conhecido por gostar de videogames e jogos eletrônicos.</p>
-    </div>
-
-    <div class="card">
-      <div class="icon">🌟</div>
-      <h3>Estilo de jogo</h3>
-      <p>Se destaca pela habilidade, pelos dribles e pela criatividade em campo.</p>
-    </div>
-  </div>
-</section>
-
-<section class="conclusion">
-  <h2>Conclusão</h2>
-  <p>
-    A trajetória de Neymar mostra como talento, dedicação e oportunidades
-    podem transformar a vida de um atleta. Sua história é importante para
-    o futebol brasileiro, pois ele conquistou títulos, representou o Brasil
-    internacionalmente e inspirou muitos jovens a praticarem esportes.
-    Mesmo com desafios e lesões, sua carreira deixou uma marca importante
-    na história do futebol.
-  </p>
-</section>
-
-</main>
-
-<footer>
-  <p>Trabalho escolar – 1º Ano A do Ensino Médio</p>
-  <p>Aluno(a): <span>Lucas MIguel</span></p>
-  <p>Disciplina: <span>programação</span></p>
-  <p>Site educativo sobre Neymar Jr. | 2026</p>
-</footer>
+    <footer>
+        <p>Trabalho escolar - 1º Ano do Ensino Médio</p>
+        <p>Desenvolvido para fins educativos.</p>
+    </footer>
 
 </body>
 </html>
