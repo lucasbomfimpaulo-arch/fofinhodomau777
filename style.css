@@ -1,6 +1,4 @@
 
-/* CONFIGURAÇÕES GERAIS */
-
 * {
     margin: 0;
     padding: 0;
@@ -9,236 +7,140 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f4;
-    color: #222;
-    line-height: 1.7;
+    font-family: Arial, sans-serif;
+    background: #0b1220;
+    color: white;
 }
 
-/* CABEÇALHO */
+/* MENU */
 
 header {
-    background-color: #071b16;
-    color: white;
-    padding: 20px 8%;
+    background: #101c32;
+    padding: 22px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-    color: white;
-}
-
-.logo span {
-    color: #f5ca52;
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
+header h2 {
+    color: #ffdf00;
+    letter-spacing: 2px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    font-size: 14px;
+    margin-left: 20px;
     transition: 0.3s;
 }
 
 nav a:hover {
-    color: #f5ca52;
+    color: #ffdf00;
 }
 
 /* INÍCIO */
 
 .inicio {
-    min-height: 550px;
-    background:
-        linear-gradient(rgba(0, 20, 12, 0.75),
-        rgba(0, 20, 12, 0.85)),
-        url("https://commons.wikimedia.org/wiki/Special:FilePath/Neymar_2018.jpg");
-
-    background-size: cover;
-    background-position: center 30%;
-    display: flex;
-    align-items: center;
-    padding: 60px 10%;
-    color: white;
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #102c55, #07101e);
 }
 
-.conteudo-inicio {
-    max-width: 650px;
+.inicio h1 {
+    font-size: 55px;
+    color: #ffdf00;
+    margin-bottom: 15px;
 }
 
-.conteudo-inicio h1 {
-    font-size: 75px;
-    line-height: 1.2;
-}
-
-.conteudo-inicio h1 span {
-    color: #f5ca52;
-}
-
-.conteudo-inicio h2 {
-    font-size: 25px;
-    margin: 15px 0;
-}
-
-.conteudo-inicio p {
-    font-size: 18px;
-    margin-bottom: 30px;
+.inicio p {
+    font-size: 19px;
+    color: #ddd;
 }
 
 .botao {
     display: inline-block;
-    background-color: #f5ca52;
-    color: #071b16;
+    margin-top: 30px;
+    padding: 14px 28px;
+    background: #ffdf00;
+    color: #111;
     text-decoration: none;
-    padding: 13px 25px;
-    border-radius: 30px;
+    border-radius: 25px;
     font-weight: bold;
     transition: 0.3s;
 }
 
 .botao:hover {
-    background-color: white;
-    transform: translateY(-4px);
+    background: white;
+    transform: scale(1.05);
 }
 
 /* SEÇÕES */
 
 section {
-    padding: 70px 9%;
+    padding: 65px 10%;
 }
 
 section h2 {
-    text-align: center;
-    color: #087b45;
-    font-size: 35px;
-    margin-bottom: 35px;
+    color: #ffdf00;
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
-/* BIOGRAFIA */
-
-.biografia-conteudo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 35px;
-    align-items: center;
-}
-
-.biografia-conteudo img {
-    width: 100%;
-    border-radius: 15px;
-}
-
-.biografia-conteudo p {
-    margin-bottom: 15px;
+section p {
+    color: #ddd;
     font-size: 17px;
+    line-height: 1.8;
 }
 
 /* CARDS */
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 22px;
 }
 
 .card {
-    background-color: white;
+    background: #17243a;
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    border-bottom: 4px solid #087b45;
+    border: 1px solid #263957;
     transition: 0.3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
+    border-color: #ffdf00;
 }
 
 .card h3 {
-    color: #087b45;
-    margin-bottom: 12px;
-    font-size: 21px;
+    color: #ffdf00;
+    margin-bottom: 15px;
 }
 
-/* CARREIRA */
-
-.carreira {
-    background-color: #e9f0e9;
+.card p {
+    font-size: 15px;
 }
 
-/* SELEÇÃO */
+/* CONQUISTAS */
 
-.seleção {
-    text-align: center;
-}
-
-.seleção p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 17px;
-}
-
-.seleção img {
-    width: 100%;
-    max-width: 650px;
-    border-radius: 15px;
-}
-
-/* TÍTULOS */
-
-.titulos {
-    background-color: #e9f0e9;
-}
-
-/* CURIOSIDADES */
-
-.curiosidades {
-    background-color: #f4f6f4;
+.conquistas {
+    background: #101c32;
 }
 
 /* CONCLUSÃO */
 
 .conclusao {
-    background-color: #087b45;
-    color: white;
     text-align: center;
-}
-
-.conclusao h2 {
-    color: #f5ca52;
-}
-
-.conclusao p {
-    max-width: 850px;
-    margin: auto;
-    font-size: 18px;
 }
 
 /* RODAPÉ */
 
 footer {
-    background-color: #071b16;
-    color: white;
+    background: #07101e;
     text-align: center;
-    padding: 35px 15px;
-}
-
-footer h3 {
-    color: #f5ca52;
-    font-size: 25px;
-    margin-bottom: 10px;
+    padding: 30px;
+    color: #aaa;
 }
 
 footer p {
@@ -246,38 +148,25 @@ footer p {
     margin: 5px;
 }
 
-/* RESPONSIVIDADE */
+/* CELULAR */
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
 
     header {
         flex-direction: column;
-        gap: 15px;
+        gap: 18px;
     }
 
-    nav {
-        justify-content: center;
-        gap: 12px;
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
     }
 
-    .conteudo-inicio h1 {
-        font-size: 48px;
-    }
-
-    .inicio {
-        min-height: 450px;
-        background-position: center;
-    }
-
-    .biografia-conteudo {
-        grid-template-columns: 1fr;
+    .inicio h1 {
+        font-size: 38px;
     }
 
     section {
-        padding: 50px 6%;
-    }
-
-    section h2 {
-        font-size: 28px;
+        padding: 45px 7%;
     }
 }
